@@ -1,0 +1,2714 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/13/2024 10:21:45 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-OVBKLH8"
+  DTS:CreatorName="DESKTOP-OVBKLH8\ETC HP"
+  DTS:DTSID="{EB8FFFAE-BB54-424F-A9E4-DD5930BA7811}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="FactCampaignPerformance"
+  DTS:PackageType="5"
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{5E08AD1D-B087-4F1C-B0FE-7C564BD38495}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 1]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{398C2C8E-DFA0-4CF6-B904-BFFDE6F5C268}"
+      DTS:ObjectName="Excel Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\ETC HP\Downloads\MarketingCampaign.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT_FactCampaignPerformance"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{15C75019-1D1F-436E-B952-B025A88F090F}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT_FactCampaignPerformance"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_FactCampaignPerformance\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT_FactCampaignPerformance\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Inputs[Data Conversion Input].Columns[Campaign]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Campaign"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Campaign]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Inputs[Data Conversion Input].Columns[Channel]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Channel"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Channel]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Inputs[Data Conversion Input].Columns[Device]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Device"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Device]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Inputs[Data Conversion Input].Columns[Ad]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Ad"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Ad]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Inputs[Data Conversion Input].Columns[Impressions]"
+                      cachedDataType="r8"
+                      cachedName="Impressions"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Impressions]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Inputs[Data Conversion Input].Columns[CTR, %]"
+                      cachedDataType="r8"
+                      cachedName="CTR, %"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[CTR, %]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Inputs[Data Conversion Input].Columns[Clicks]"
+                      cachedDataType="r8"
+                      cachedName="Clicks"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Clicks]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Inputs[Data Conversion Input].Columns[Daily Average CPC]"
+                      cachedDataType="r8"
+                      cachedName="Daily Average CPC"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Daily Average CPC]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Inputs[Data Conversion Input].Columns[Spend, GBP]"
+                      cachedDataType="r8"
+                      cachedName="Spend, GBP"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Spend, GBP]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Inputs[Data Conversion Input].Columns[Conversions]"
+                      cachedDataType="r8"
+                      cachedName="Conversions"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Conversions]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Inputs[Data Conversion Input].Columns[Total conversion value, GBP]"
+                      cachedDataType="r8"
+                      cachedName="Total conversion value, GBP"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Total conversion value, GBP]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Inputs[Data Conversion Input].Columns[Likes (Reactions)]"
+                      cachedDataType="r8"
+                      cachedName="Likes (Reactions)"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Likes (Reactions)]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Inputs[Data Conversion Input].Columns[Shares]"
+                      cachedDataType="r8"
+                      cachedName="Shares"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Shares]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Inputs[Data Conversion Input].Columns[Comments]"
+                      cachedDataType="r8"
+                      cachedName="Comments"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Comments]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Inputs[Data Conversion Input].Columns[City/Location]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="City/Location"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[City/Location]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DFT_FactCampaignPerformance\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Campaign]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Campaign]"
+                      name="Copy of Campaign"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Campaign]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Channel]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Channel]"
+                      name="Copy of Channel"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Channel]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Device]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Device]"
+                      name="Copy of Device"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Device]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Ad]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Ad]"
+                      name="Copy of Ad"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Ad]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Impressions]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Impressions]"
+                      name="Copy of Impressions"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Impressions]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CTR, %]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CTR, %]"
+                      name="Copy of CTR, %"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[CTR, %]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Clicks]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Clicks]"
+                      name="Copy of Clicks"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Clicks]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Daily Average CPC]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Daily Average CPC]"
+                      name="Copy of Daily Average CPC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Daily Average CPC]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Spend, GBP]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Spend, GBP]"
+                      name="Copy of Spend, GBP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Spend, GBP]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Conversions]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Conversions]"
+                      name="Copy of Conversions"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Conversions]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Total conversion value, GBP]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Total conversion value, GBP]"
+                      name="Copy of Total conversion value, GBP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Total conversion value, GBP]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Likes (Reactions)]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Likes (Reactions)]"
+                      name="Copy of Likes (Reactions)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Likes (Reactions)]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Shares]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Shares]"
+                      name="Copy of Shares"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Shares]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Comments]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Comments]"
+                      name="Copy of Comments"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Comments]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of City/Location]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of City/Location]"
+                      name="Copy of City/Location"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[City/Location]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DFT_FactCampaignPerformance\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_FactCampaignPerformance\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT_FactCampaignPerformance\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Derived Column.Inputs[Derived Column Input].Columns[Date]"
+                      cachedDataType="date"
+                      cachedName="Date"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Date]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_FactCampaignPerformance\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT_FactCampaignPerformance\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Derived Column.Outputs[Derived Column Output].Columns[SourceSystemCode]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_FactCampaignPerformance\Derived Column.Outputs[Derived Column Output].Columns[SourceSystemCode]"
+                      name="SourceSystemCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(dt_ui1)1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(dt_ui1)1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Derived Column.Outputs[Derived Column Output].Columns[DerivedDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\DFT_FactCampaignPerformance\Derived Column.Outputs[Derived Column Output].Columns[DerivedDate]"
+                      name="DerivedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[RIGHT]("0" + (DT_WSTR,4)[DATEPART]("yyyy",#{Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Date]}),4) + "-" + [RIGHT]("0" + (DT_WSTR,2)[DATEPART]("mm",#{Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Date]}),2) + "-" + [RIGHT]("0" + (DT_WSTR,2)[DATEPART]("dd",#{Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Date]}),2)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">RIGHT("0" + (DT_WSTR,4)DATEPART("yyyy",Date),4) + "-" + RIGHT("0" + (DT_WSTR,2)DATEPART("mm",Date),2) + "-" + RIGHT("0" + (DT_WSTR,2)DATEPART("dd",Date),2)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_FactCampaignPerformance\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT_FactCampaignPerformance\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_FactCampaignPerformance\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_FactCampaignPerformance\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_FactCampaignPerformance\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">data$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_FactCampaignPerformance\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Campaign]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Campaign]"
+                      length="255"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Campaign]"
+                      name="Campaign"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Date]"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Date]"
+                      name="Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Channel]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Channel]"
+                      length="255"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Channel]"
+                      name="Channel"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Device]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Device]"
+                      length="255"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Device]"
+                      name="Device"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Ad]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Ad]"
+                      length="255"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Ad]"
+                      name="Ad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Impressions]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Impressions]"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Impressions]"
+                      name="Impressions"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[CTR, %]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[CTR, %]"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[CTR, %]"
+                      name="CTR, %"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Clicks]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Clicks]"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Clicks]"
+                      name="Clicks"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Daily Average CPC]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Daily Average CPC]"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Daily Average CPC]"
+                      name="Daily Average CPC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Spend, GBP]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Spend, GBP]"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Spend, GBP]"
+                      name="Spend, GBP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Conversions]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Conversions]"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Conversions]"
+                      name="Conversions"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Total conversion value, GBP]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Total conversion value, GBP]"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Total conversion value, GBP]"
+                      name="Total conversion value, GBP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Likes (Reactions)]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Likes (Reactions)]"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Likes (Reactions)]"
+                      name="Likes (Reactions)"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Shares]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Shares]"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Shares]"
+                      name="Shares"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Comments]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Comments]"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[Comments]"
+                      name="Comments"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[City/Location]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[City/Location]"
+                      length="255"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].Columns[City/Location]"
+                      name="City/Location"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Campaign]"
+                      dataType="wstr"
+                      length="255"
+                      name="Campaign" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Date]"
+                      dataType="date"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[City/Location]"
+                      dataType="wstr"
+                      length="255"
+                      name="City/Location" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Latitude]"
+                      dataType="wstr"
+                      length="255"
+                      name="Latitude" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Longitude]"
+                      dataType="wstr"
+                      length="255"
+                      name="Longitude" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Channel]"
+                      dataType="wstr"
+                      length="255"
+                      name="Channel" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Device]"
+                      dataType="wstr"
+                      length="255"
+                      name="Device" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Ad]"
+                      dataType="wstr"
+                      length="255"
+                      name="Ad" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Impressions]"
+                      dataType="r8"
+                      name="Impressions" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[CTR, %]"
+                      dataType="r8"
+                      name="CTR, %" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Clicks]"
+                      dataType="r8"
+                      name="Clicks" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Daily Average CPC]"
+                      dataType="r8"
+                      name="Daily Average CPC" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Spend, GBP]"
+                      dataType="r8"
+                      name="Spend, GBP" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Conversions]"
+                      dataType="r8"
+                      name="Conversions" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Total conversion value, GBP]"
+                      dataType="r8"
+                      name="Total conversion value, GBP" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Likes (Reactions)]"
+                      dataType="r8"
+                      name="Likes (Reactions)" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Shares]"
+                      dataType="r8"
+                      name="Shares" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output].ExternalColumns[Comments]"
+                      dataType="r8"
+                      name="Comments" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Campaign]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Campaign]"
+                      name="Campaign" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Date]"
+                      dataType="date"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Date]"
+                      name="Date" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Channel]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Channel]"
+                      name="Channel" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Device]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Device]"
+                      name="Device" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Ad]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Ad]"
+                      name="Ad" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Impressions]"
+                      dataType="r8"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Impressions]"
+                      name="Impressions" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[CTR, %]"
+                      dataType="r8"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[CTR, %]"
+                      name="CTR, %" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Clicks]"
+                      dataType="r8"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Clicks]"
+                      name="Clicks" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Daily Average CPC]"
+                      dataType="r8"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Daily Average CPC]"
+                      name="Daily Average CPC" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Spend, GBP]"
+                      dataType="r8"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Spend, GBP]"
+                      name="Spend, GBP" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Conversions]"
+                      dataType="r8"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Conversions]"
+                      name="Conversions" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Total conversion value, GBP]"
+                      dataType="r8"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Total conversion value, GBP]"
+                      name="Total conversion value, GBP" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Likes (Reactions)]"
+                      dataType="r8"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Likes (Reactions)]"
+                      name="Likes (Reactions)" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Shares]"
+                      dataType="r8"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Shares]"
+                      name="Shares" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Comments]"
+                      dataType="r8"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[Comments]"
+                      name="Comments" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[City/Location]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Error Output].Columns[City/Location]"
+                      name="City/Location" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="FactCampaignPerformance"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactCampaignPerformance]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Connections[OleDbConnection]"
+                  connectionManagerID="{F4BF0F3D-9F33-45AF-8CF3-6509F3D1429B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-OVBKLH8.Marketing_DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].Columns[SourceSystemCode]"
+                      cachedDataType="ui1"
+                      cachedName="SourceSystemCode"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[SourceSystemCode]"
+                      lineageId="Package\DFT_FactCampaignPerformance\Derived Column.Outputs[Derived Column Output].Columns[SourceSystemCode]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].Columns[Campaign_ID_PK_SK]"
+                      cachedDataType="i4"
+                      cachedName="Campaign_ID_PK_SK"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[Campaign_ID_FK]"
+                      lineageId="Package\DFT_FactCampaignPerformance\LKP_Campaign_SK.Outputs[Lookup Match Output].Columns[Campaign_ID_PK_SK]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].Columns[Location_ID_PK_SK]"
+                      cachedDataType="i4"
+                      cachedName="Location_ID_PK_SK"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[Location_ID_FK]"
+                      lineageId="Package\DFT_FactCampaignPerformance\LKP_Location_SK.Outputs[Lookup Match Output].Columns[Location_ID_PK_SK]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].Columns[Channel_ID_PK_SK]"
+                      cachedDataType="i4"
+                      cachedName="Channel_ID_PK_SK"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[Channel_ID_FK]"
+                      lineageId="Package\DFT_FactCampaignPerformance\LKP_Channel_SK.Outputs[Lookup Match Output].Columns[Channel_ID_PK_SK]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].Columns[Device_ID_PK_SK]"
+                      cachedDataType="i4"
+                      cachedName="Device_ID_PK_SK"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[Device_ID_FK]"
+                      lineageId="Package\DFT_FactCampaignPerformance\LKP_Device_SK.Outputs[Lookup Match Output].Columns[Device_ID_PK_SK]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].Columns[Ad_ID_PK_SK]"
+                      cachedDataType="i4"
+                      cachedName="Ad_ID_PK_SK"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[Ad_ID_FK]"
+                      lineageId="Package\DFT_FactCampaignPerformance\LKP_Ad_SK.Outputs[Lookup Match Output].Columns[Ad_ID_PK_SK]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].Columns[DateSK]"
+                      cachedDataType="i4"
+                      cachedName="DateSK"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[Date_ID_FK]"
+                      lineageId="Package\DFT_FactCampaignPerformance\LKP_Date_SK.Outputs[Lookup Match Output].Columns[DateSK]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].Columns[Copy of Impressions]"
+                      cachedDataType="r8"
+                      cachedName="Copy of Impressions"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[Impressions]"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Impressions]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].Columns[Copy of CTR, %]"
+                      cachedDataType="r8"
+                      cachedName="Copy of CTR, %"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[CTR]"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CTR, %]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].Columns[Copy of Clicks]"
+                      cachedDataType="ui1"
+                      cachedName="Copy of Clicks"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[Clicks]"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Clicks]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].Columns[Copy of Daily Average CPC]"
+                      cachedDataType="r8"
+                      cachedName="Copy of Daily Average CPC"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[DailyAverageCPC]"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Daily Average CPC]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].Columns[Copy of Spend, GBP]"
+                      cachedDataType="r8"
+                      cachedName="Copy of Spend, GBP"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[Spend_GBP]"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Spend, GBP]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].Columns[Copy of Conversions]"
+                      cachedDataType="ui1"
+                      cachedName="Copy of Conversions"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[Conversions]"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Conversions]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].Columns[Copy of Total conversion value, GBP]"
+                      cachedDataType="r8"
+                      cachedName="Copy of Total conversion value, GBP"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[TotalConversionValue_GBP]"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Total conversion value, GBP]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].Columns[Copy of Likes (Reactions)]"
+                      cachedDataType="ui1"
+                      cachedName="Copy of Likes (Reactions)"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[Likes_Reactions]"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Likes (Reactions)]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].Columns[Copy of Shares]"
+                      cachedDataType="ui1"
+                      cachedName="Copy of Shares"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[Shares]"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Shares]" />
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].Columns[Copy of Comments]"
+                      cachedDataType="ui1"
+                      cachedName="Copy of Comments"
+                      externalMetadataColumnId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[Comments]"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Comments]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[CampaignPerformance_ID_PK_SK]"
+                      dataType="i4"
+                      name="CampaignPerformance_ID_PK_SK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[Campaign_ID_FK]"
+                      dataType="i4"
+                      name="Campaign_ID_FK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[Location_ID_FK]"
+                      dataType="i4"
+                      name="Location_ID_FK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[Channel_ID_FK]"
+                      dataType="i4"
+                      name="Channel_ID_FK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[Device_ID_FK]"
+                      dataType="i4"
+                      name="Device_ID_FK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[Ad_ID_FK]"
+                      dataType="i4"
+                      name="Ad_ID_FK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[Date_ID_FK]"
+                      dataType="i4"
+                      name="Date_ID_FK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[Impressions]"
+                      dataType="r8"
+                      name="Impressions" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[CTR]"
+                      dataType="r8"
+                      name="CTR" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[Clicks]"
+                      dataType="i4"
+                      name="Clicks" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[DailyAverageCPC]"
+                      dataType="r8"
+                      name="DailyAverageCPC" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[Spend_GBP]"
+                      dataType="r8"
+                      name="Spend_GBP" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[Conversions]"
+                      dataType="i4"
+                      name="Conversions" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[TotalConversionValue_GBP]"
+                      dataType="r8"
+                      name="TotalConversionValue_GBP" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[Likes_Reactions]"
+                      dataType="i4"
+                      name="Likes_Reactions" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[Shares]"
+                      dataType="i4"
+                      name="Shares" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[Comments]"
+                      dataType="i4"
+                      name="Comments" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input].ExternalColumns[SourceSystemCode]"
+                      dataType="ui1"
+                      name="SourceSystemCode" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_FactCampaignPerformance\LKP_Ad_SK"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="LKP_Ad_SK"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimAd]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimAd]) [refTable]
+where [refTable].[Ad] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Ad_ID_PK_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Ad_ID_BK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Ad" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1256"/&gt;&lt;referenceColumn name="StartDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EndDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SourceSystemCode" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IsCurrent" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Ad]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Ad_SK.Connections[OleDbConnection]"
+                  connectionManagerID="{F4BF0F3D-9F33-45AF-8CF3-6509F3D1429B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-OVBKLH8.Marketing_DWH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Ad_SK.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\LKP_Ad_SK.Inputs[Lookup Input].Columns[Copy of Ad]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Ad"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Ad]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Ad</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Ad_SK.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT_FactCampaignPerformance\LKP_Ad_SK.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\LKP_Ad_SK.Outputs[Lookup Match Output].Columns[Ad_ID_PK_SK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT_FactCampaignPerformance\LKP_Ad_SK.Outputs[Lookup Match Output].Columns[Ad_ID_PK_SK]"
+                      name="Ad_ID_PK_SK"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Ad_ID_PK_SK</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Ad_SK.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT_FactCampaignPerformance\LKP_Ad_SK.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Ad_SK.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT_FactCampaignPerformance\LKP_Ad_SK.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\LKP_Ad_SK.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_FactCampaignPerformance\LKP_Ad_SK.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\LKP_Ad_SK.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_FactCampaignPerformance\LKP_Ad_SK.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_FactCampaignPerformance\LKP_Campaign_SK"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="LKP_Campaign_SK"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimCampaign]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimCampaign]) [refTable]
+where [refTable].[Campaign] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Campaign_ID_PK_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Campaign_ID_BK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Campaign" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1256"/&gt;&lt;referenceColumn name="StartDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EndDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SourceSystemCode" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IsCurrent" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Campaign]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Campaign_SK.Connections[OleDbConnection]"
+                  connectionManagerID="{F4BF0F3D-9F33-45AF-8CF3-6509F3D1429B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-OVBKLH8.Marketing_DWH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Campaign_SK.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\LKP_Campaign_SK.Inputs[Lookup Input].Columns[Copy of Campaign]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Campaign"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Campaign]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Campaign</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Campaign_SK.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT_FactCampaignPerformance\LKP_Campaign_SK.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\LKP_Campaign_SK.Outputs[Lookup Match Output].Columns[Campaign_ID_PK_SK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT_FactCampaignPerformance\LKP_Campaign_SK.Outputs[Lookup Match Output].Columns[Campaign_ID_PK_SK]"
+                      name="Campaign_ID_PK_SK"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Campaign_ID_PK_SK</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Campaign_SK.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT_FactCampaignPerformance\LKP_Campaign_SK.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Campaign_SK.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT_FactCampaignPerformance\LKP_Campaign_SK.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\LKP_Campaign_SK.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_FactCampaignPerformance\LKP_Campaign_SK.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\LKP_Campaign_SK.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_FactCampaignPerformance\LKP_Campaign_SK.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_FactCampaignPerformance\LKP_Channel_SK"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="LKP_Channel_SK"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimChannel]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimChannel]) [refTable]
+where [refTable].[Channel] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Channel_ID_PK_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Channel_ID_BK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Channel" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1256"/&gt;&lt;referenceColumn name="StartDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EndDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SourceSystemCode" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IsCurrent" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Channel]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Channel_SK.Connections[OleDbConnection]"
+                  connectionManagerID="{F4BF0F3D-9F33-45AF-8CF3-6509F3D1429B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-OVBKLH8.Marketing_DWH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Channel_SK.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\LKP_Channel_SK.Inputs[Lookup Input].Columns[Copy of Channel]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Channel"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Channel]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Channel</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Channel_SK.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT_FactCampaignPerformance\LKP_Channel_SK.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\LKP_Channel_SK.Outputs[Lookup Match Output].Columns[Channel_ID_PK_SK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT_FactCampaignPerformance\LKP_Channel_SK.Outputs[Lookup Match Output].Columns[Channel_ID_PK_SK]"
+                      name="Channel_ID_PK_SK"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Channel_ID_PK_SK</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Channel_SK.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT_FactCampaignPerformance\LKP_Channel_SK.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Channel_SK.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT_FactCampaignPerformance\LKP_Channel_SK.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\LKP_Channel_SK.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_FactCampaignPerformance\LKP_Channel_SK.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\LKP_Channel_SK.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_FactCampaignPerformance\LKP_Channel_SK.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_FactCampaignPerformance\LKP_Date_SK"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="LKP_Date_SK"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimDate]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimDate]) [refTable]
+where [refTable].[Date] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateSK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Date" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Day" dataType="DT_STR" length="2" precision="0" scale="0" codePage="1256"/&gt;&lt;referenceColumn name="DaySuffix" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1256"/&gt;&lt;referenceColumn name="DayOfWeek" dataType="DT_STR" length="9" precision="0" scale="0" codePage="1256"/&gt;&lt;referenceColumn name="DOWInMonth" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayOfYear" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="WeekOfYear" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="WeekOfMonth" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Month" dataType="DT_STR" length="2" precision="0" scale="0" codePage="1256"/&gt;&lt;referenceColumn name="MonthName" dataType="DT_STR" length="9" precision="0" scale="0" codePage="1256"/&gt;&lt;referenceColumn name="Quarter" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="QuarterName" dataType="DT_STR" length="6" precision="0" scale="0" codePage="1256"/&gt;&lt;referenceColumn name="Year" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1256"/&gt;&lt;referenceColumn name="StandardDate" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1256"/&gt;&lt;referenceColumn name="HolidayText" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1256"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT_FactCampaignPerformance\Derived Column.Outputs[Derived Column Output].Columns[DerivedDate]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Date_SK.Connections[OleDbConnection]"
+                  connectionManagerID="{F4BF0F3D-9F33-45AF-8CF3-6509F3D1429B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-OVBKLH8.Marketing_DWH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Date_SK.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\LKP_Date_SK.Inputs[Lookup Input].Columns[DerivedDate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="DerivedDate"
+                      lineageId="Package\DFT_FactCampaignPerformance\Derived Column.Outputs[Derived Column Output].Columns[DerivedDate]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Date</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Date_SK.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT_FactCampaignPerformance\LKP_Date_SK.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\LKP_Date_SK.Outputs[Lookup Match Output].Columns[DateSK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT_FactCampaignPerformance\LKP_Date_SK.Outputs[Lookup Match Output].Columns[DateSK]"
+                      name="DateSK"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">DateSK</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Date_SK.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT_FactCampaignPerformance\LKP_Date_SK.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Date_SK.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT_FactCampaignPerformance\LKP_Date_SK.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\LKP_Date_SK.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_FactCampaignPerformance\LKP_Date_SK.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\LKP_Date_SK.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_FactCampaignPerformance\LKP_Date_SK.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_FactCampaignPerformance\LKP_Device_SK"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="LKP_Device_SK"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimDevice]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimDevice]) [refTable]
+where [refTable].[Device] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Device_ID_PK_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Device_ID_BK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Device" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1256"/&gt;&lt;referenceColumn name="StartDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EndDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SourceSystemCode" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IsCurrent" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Device]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Device_SK.Connections[OleDbConnection]"
+                  connectionManagerID="{F4BF0F3D-9F33-45AF-8CF3-6509F3D1429B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-OVBKLH8.Marketing_DWH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Device_SK.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\LKP_Device_SK.Inputs[Lookup Input].Columns[Copy of Device]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Device"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Device]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Device</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Device_SK.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT_FactCampaignPerformance\LKP_Device_SK.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\LKP_Device_SK.Outputs[Lookup Match Output].Columns[Device_ID_PK_SK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT_FactCampaignPerformance\LKP_Device_SK.Outputs[Lookup Match Output].Columns[Device_ID_PK_SK]"
+                      name="Device_ID_PK_SK"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Device_ID_PK_SK</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Device_SK.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT_FactCampaignPerformance\LKP_Device_SK.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Device_SK.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT_FactCampaignPerformance\LKP_Device_SK.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\LKP_Device_SK.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_FactCampaignPerformance\LKP_Device_SK.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\LKP_Device_SK.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_FactCampaignPerformance\LKP_Device_SK.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_FactCampaignPerformance\LKP_Location_SK"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="LKP_Location_SK"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimLocation]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimLocation]) [refTable]
+where [refTable].[City] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Location_ID_PK_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Location_ID_BK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="City" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1256"/&gt;&lt;referenceColumn name="Latitude" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1256"/&gt;&lt;referenceColumn name="Longitude" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1256"/&gt;&lt;referenceColumn name="StartDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EndDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SourceSystemCode" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IsCurrent" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of City/Location]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Location_SK.Connections[OleDbConnection]"
+                  connectionManagerID="{F4BF0F3D-9F33-45AF-8CF3-6509F3D1429B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-OVBKLH8.Marketing_DWH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Location_SK.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_FactCampaignPerformance\LKP_Location_SK.Inputs[Lookup Input].Columns[Copy of City/Location]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of City/Location"
+                      lineageId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of City/Location]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">City</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Location_SK.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT_FactCampaignPerformance\LKP_Location_SK.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\LKP_Location_SK.Outputs[Lookup Match Output].Columns[Location_ID_PK_SK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT_FactCampaignPerformance\LKP_Location_SK.Outputs[Lookup Match Output].Columns[Location_ID_PK_SK]"
+                      name="Location_ID_PK_SK"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Location_ID_PK_SK</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Location_SK.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT_FactCampaignPerformance\LKP_Location_SK.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_FactCampaignPerformance\LKP_Location_SK.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT_FactCampaignPerformance\LKP_Location_SK.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\LKP_Location_SK.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_FactCampaignPerformance\LKP_Location_SK.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_FactCampaignPerformance\LKP_Location_SK.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_FactCampaignPerformance\LKP_Location_SK.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_FactCampaignPerformance.Paths[Data Conversion Output]"
+              endId="Package\DFT_FactCampaignPerformance\LKP_Campaign_SK.Inputs[Lookup Input]"
+              name="Data Conversion Output"
+              startId="Package\DFT_FactCampaignPerformance\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DFT_FactCampaignPerformance.Paths[Derived Column Output]"
+              endId="Package\DFT_FactCampaignPerformance\Data Conversion.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\DFT_FactCampaignPerformance\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT_FactCampaignPerformance.Paths[Excel Source Output]"
+              endId="Package\DFT_FactCampaignPerformance\Derived Column.Inputs[Derived Column Input]"
+              name="Excel Source Output"
+              startId="Package\DFT_FactCampaignPerformance\Excel Source.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\DFT_FactCampaignPerformance.Paths[Lookup Match Output]"
+              endId="Package\DFT_FactCampaignPerformance\LKP_Channel_SK.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT_FactCampaignPerformance\LKP_Campaign_SK.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT_FactCampaignPerformance.Paths[Lookup Match Output1]"
+              endId="Package\DFT_FactCampaignPerformance\LKP_Device_SK.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT_FactCampaignPerformance\LKP_Channel_SK.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT_FactCampaignPerformance.Paths[Lookup Match Output2]"
+              endId="Package\DFT_FactCampaignPerformance\LKP_Location_SK.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT_FactCampaignPerformance\LKP_Device_SK.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT_FactCampaignPerformance.Paths[Lookup Match Output3]"
+              endId="Package\DFT_FactCampaignPerformance\LKP_Ad_SK.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT_FactCampaignPerformance\LKP_Location_SK.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT_FactCampaignPerformance.Paths[Lookup Match Output4]"
+              endId="Package\DFT_FactCampaignPerformance\LKP_Date_SK.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT_FactCampaignPerformance\LKP_Ad_SK.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT_FactCampaignPerformance.Paths[Lookup Match Output5]"
+              endId="Package\DFT_FactCampaignPerformance\FactCampaignPerformance.Inputs[OLE DB Destination Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT_FactCampaignPerformance\LKP_Date_SK.Outputs[Lookup Match Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="230,42"
+          Id="Package\DFT_FactCampaignPerformance"
+          TopLeft="231,218" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT_FactCampaignPerformance">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="167,42"
+          Id="Package\DFT_FactCampaignPerformance\LKP_Campaign_SK"
+          TopLeft="566,116" />
+        <NodeLayout
+          Size="142,42"
+          Id="Package\DFT_FactCampaignPerformance\LKP_Date_SK"
+          TopLeft="589,223" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\DFT_FactCampaignPerformance\LKP_Location_SK"
+          TopLeft="14,220" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\DFT_FactCampaignPerformance\Excel Source"
+          TopLeft="18,21" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\DFT_FactCampaignPerformance\LKP_Ad_SK"
+          TopLeft="279,224" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\DFT_FactCampaignPerformance\LKP_Channel_SK"
+          TopLeft="281,123" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\DFT_FactCampaignPerformance\LKP_Device_SK"
+          TopLeft="16,118" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\DFT_FactCampaignPerformance\FactCampaignPerformance"
+          TopLeft="557,320" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\DFT_FactCampaignPerformance\Data Conversion"
+          TopLeft="575,29" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\DFT_FactCampaignPerformance\Derived Column"
+          TopLeft="275,26" />
+        <EdgeLayout
+          Id="Package\DFT_FactCampaignPerformance.Paths[Lookup Match Output5]"
+          TopLeft="659.75,265">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,17.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_FactCampaignPerformance.Paths[Lookup Match Output4]"
+          TopLeft="412,244.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="177,0"
+              Start="0,0"
+              End="169.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="169.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="36.55861328125,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_FactCampaignPerformance.Paths[Lookup Match Output3]"
+          TopLeft="174,243">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="105,0"
+              Start="0,0"
+              End="97.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="97.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0.558613281249997,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_FactCampaignPerformance.Paths[Lookup Match Output2]"
+          TopLeft="92.75,160">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_FactCampaignPerformance.Paths[Lookup Match Output1]"
+          TopLeft="281,141.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-114,0"
+              Start="0,0"
+              End="-106.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-106.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-101.44138671875,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_FactCampaignPerformance.Paths[Lookup Match Output]"
+          TopLeft="566,140.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-127,0"
+              Start="0,0"
+              End="-119.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-119.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-107.94138671875,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_FactCampaignPerformance.Paths[Excel Source Output]"
+          TopLeft="157,44.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="118,0"
+              Start="0,0"
+              End="110.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="110.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_FactCampaignPerformance.Paths[Derived Column Output]"
+          TopLeft="429,48.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="146,0"
+              Start="0,0"
+              End="138.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="138.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_FactCampaignPerformance.Paths[Data Conversion Output]"
+          TopLeft="651.25,71">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_FactCampaignPerformance\LKP_Campaign_SK">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimCampaign]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_FactCampaignPerformance\LKP_Date_SK">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_FactCampaignPerformance\LKP_Location_SK">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimLocation]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_FactCampaignPerformance\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_FactCampaignPerformance\LKP_Ad_SK">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimAd]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_FactCampaignPerformance\LKP_Channel_SK">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimChannel]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_FactCampaignPerformance\LKP_Device_SK">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDevice]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_FactCampaignPerformance\FactCampaignPerformance">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

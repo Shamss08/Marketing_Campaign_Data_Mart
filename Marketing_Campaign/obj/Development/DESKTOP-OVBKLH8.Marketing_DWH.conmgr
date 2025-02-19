@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-OVBKLH8.Marketing_DWH"
+  DTS:DTSID="{F4BF0F3D-9F33-45AF-8CF3-6509F3D1429B}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-OVBKLH8;Initial Catalog=Marketing_DWH;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Marketing_Campaign-{F4BF0F3D-9F33-45AF-8CF3-6509F3D1429B}DESKTOP-OVBKLH8.Marketing_DWH;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
